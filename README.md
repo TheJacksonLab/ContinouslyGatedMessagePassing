@@ -1,1 +1,5 @@
 # ContinouslyGatedMessagePassing
+
+We provide a minimal example script implementing a training run of ComENet with CGMP-modified message-passing passing, as described in our paper "Distilling Coarse-Grained Representations of Molecular Electronic Structure with Continuously Gated Message Passing". It instantiates a network and performs a 1000-epoch training run, over which period the target CG resolution is slowly decreased from 32 to 2. At specified intervals, the network is evaluated on the test set with node-level and graph-level predictions outputted to respective files in the "out_min/" directory.
+
+The provided dataset contains 14509 conformations of the BTBT molecule, genereated as described in the text. Each conformation also has the HOMO energy, LUMO energy, and HOMO-LUMO energy gap, standardized over the dataset. The GN3D Dataset class is a modification of the QM93D class in DIG to hold these values.
